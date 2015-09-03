@@ -18,7 +18,7 @@ hard = Hash.new
   #hard_hit_hash = Hash.new("Hit")
   #hard_stay_hash = Hash.new("Your most optimal move is to stay")
   #hard_doubleip_orhit_hash = Hash.new("Double if possible, otherwise hit")
-(5..8).each { |x| hard[x] = Hash.new("Hit") }
+(5..8).each { |x| hard[x] = Hash.new("You should most definatly hit") }
 #puts"#{hard_doubleip_orhit_hash}"
 #hard_doubleip_orhit_hash = hard[8][5]
 #hard[8][5] = Hash.new("Double if possible, otherwise hit")
