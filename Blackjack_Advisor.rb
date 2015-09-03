@@ -13,54 +13,6 @@ def convert(card)
   end
 end
 
-=begin
-def pair(card1, card2, sum_cards, dealer_card)
-if card1 == 11 || card2 == 11
-  return soft[sum_cards][dealer_card.to_i]
-elsif card1 == card2
-  return pair[sum_cards][dealer_card.to_i]
-else hard[sum_cards][dealer_card.to_i]
-end
-end
-=end
-
-puts "Enter your first card 2-10, J Q K or A: "
-card1 = gets.chomp
-card1 = convert(card1)
-
-puts "Enter your second card: "
-card2 = gets.chomp
-card2 = convert(card2)
-
-puts "Enter dealers card: "
-dealer_card = gets.chomp
-dealer_card = convert (dealer_card)
-
-sum_cards = card1 + card2
-
-#dont know if i need this but it helps
-soft=Hash.new
-hard=Hash.new
-pair=Hash.new
-
-#testing to make sure variables hold what they need to
-puts"soft #{soft}"
-puts"hard #{hard}"
-puts"pair#{pair}"
-puts"card1#{card1}"
-puts"card2#{card2}"
-puts"sum#{sum_cards}"
-puts"dealers card#{dealer_card}"
-
-
-if card1 == 11 || card2 == 11
-  puts soft[sum_cards][dealer_card]
-  elsif card1 == card2
-    puts pair[sum_cards][dealer_card]
-  else
-    puts hard[sum_cards][dealer_card]
-end
-
 #player_hand = pair()
 hard = Hash.new
   #hard_hit_hash = Hash.new("Hit")
@@ -115,8 +67,6 @@ hard[16][9]= "Hit"
 hard[16][10]= "Hit"
 hard[16][11]= "Hit"
 
-#puts hard[sum_cards][dealer_card]
-
 
 soft = Hash.new
 #soft_hit_hash = Hash.new("Hit")
@@ -151,7 +101,7 @@ soft[18][5]= "Double if possible, otherwise stay"
 soft[18][6]= "Double if possible, otherwise stay"
 soft[19][6]= "Double if possible, otherwise stay"
 
-#  puts soft[sum_cards][dealer_card]
+
 
 
 pair = Hash.new
@@ -204,4 +154,63 @@ pair[20][8]="Stay"
 pair[20][9]="Stay"
 pair[20][10]="Stay"
 pair[20][11]="Stay"
+=begin
+def pair(card1, card2, sum_cards, dealer_card)
+if card1 == 11 || card2 == 11
+  return soft[sum_cards][dealer_card.to_i]
+elsif card1 == card2
+  return pair[sum_cards][dealer_card.to_i]
+else hard[sum_cards][dealer_card.to_i]
+end
+end
+=end
+
+puts "Enter your first card 2-10, J Q K or A: "
+card1 = gets.chomp
+card1 = convert(card1)
+
+puts "Enter your second card: "
+card2 = gets.chomp
+card2 = convert(card2)
+
+puts "Enter dealers card: "
+dealer_card = gets.chomp
+dealer_card = convert (dealer_card)
+
+sum_cards = card1 + card2
+
+if card1 == card2 && card1 + card2 == 22
+  puts pair[sum_cards][dealer_card]
+elsif card1 == 11 || card2 == 11
+  puts soft[sum_cards][dealer_card]
+elsif card1 == card2
+  puts pair[sum_cards][dealer_card]
+else
+  puts hard[sum_cards][dealer_card]
+end
+
+
+
+#dont know if i need this but it helps
+soft=Hash.new
+hard=Hash.new
+pair=Hash.new
+
+#testing to make sure variables hold what they need to
+#puts"soft = #{soft}"
+#puts"hard = #{hard}"
+#puts"pair =#{pair}"
+#puts"card1 =#{card1}"
+#puts"card2 =#{card2}"
+#puts"sum =#{sum_cards}"
+#puts"dealers card =#{dealer_card}"
+
+
+#puts hard[sum_cards][dealer_card]
+
+
+#  puts soft[sum_cards][dealer_card]
+
+
+
 #  puts pair[sum_cards][dealer_card]
