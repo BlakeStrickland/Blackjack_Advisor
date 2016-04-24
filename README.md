@@ -1,4 +1,4 @@
-# Blackjack_Advisor Homework day 3
+# Blackjack_Advisor
 
 ### Get some helpful (and statistical) help for playing **Blackjack**!
 
@@ -11,5 +11,3 @@ and stay, or to split!
 These stats are based on the use of a SINGLE deck and only properly calculate the FIRST move,
 any property or monitary value lost while using this program will hold the individual or group
 responsible. (THIS MEANS YOU PAY THE FINE BECAUSE YOU LOST!!!)
-
-
